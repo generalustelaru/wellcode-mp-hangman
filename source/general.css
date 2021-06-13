@@ -1,0 +1,26 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+#game {
+    box-sizing: border-box;
+    height: 495px;
+    width: auto;
+}
+
+#newGame{
+    
+    width: 107px;
+    margin: auto;
+    margin-top: 20px;
+}
+#result {
+    box-sizing: border-box;
+    width: 600x;
+    height: 50px;
+    font-size: 45px;
+    margin: 0 auto;
+    text-align: center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}

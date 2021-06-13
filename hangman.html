@@ -1,0 +1,93 @@
+<DOCTYPE html>
+<html>
+    <head>
+        <title>Hang-out-to-dry-man</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="source\keys-chars.css">
+        <link rel="stylesheet" href="source\graphics.css">
+        <link rel="stylesheet" href="source\general.css">
+        <!-- Bootstrap 4 -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div id="result">
+            <!-- messages-->
+        </div>
+        <div id="game">
+            <div class="graphics">
+                <img src="graphics\gallow.svg" id="gallow" alt="gallow">
+                <img src="graphics\hanged.svg" id="hanged" alt="hanged">
+                <img class="part" src="graphics\part-head.svg" id="head" alt="head">
+                <img class="part" src="graphics\part-body.svg" id="body" alt="body">
+                <img class="part" src="graphics\part-arm-left.svg" id="arm-left" alt="arm-left">
+                <img class="part" src="graphics\part-arm-right.svg" id="arm-right" alt="arm-right">
+                <img class="part" src="graphics\part-leg-left.svg" id="leg-left" alt="leg-left">
+                <img class="part" src="graphics\part-leg-right.svg" id="leg-right" alt="leg-right">
+            </div>            
+            <div id="charField">
+                <!-- charBox elements (character containers) go here -->
+            </div>
+            <div id="keyboard">
+                <div class="keyRow" id="row1">
+                    <div class="key" id="Q" onclick="inquire('Q')">Q</div>
+                    <div class="key" id="W" onclick="inquire('W')">W</div>
+                    <div class="key" id="E" onclick="inquire('E')">E</div>
+                    <div class="key" id="R" onclick="inquire('R')">R</div>
+                    <div class="key" id="T" onclick="inquire('T')">T</div>
+                    <div class="key" id="Y" onclick="inquire('Y')">Y</div>
+                    <div class="key" id="U" onclick="inquire('U')">U</div>
+                    <div class="key" id="I" onclick="inquire('I')">I</div>
+                    <div class="key" id="O" onclick="inquire('O')">O</div>
+                    <div class="key" id="P" onclick="inquire('P')">P</div>
+                </div>
+                <div class="keyRow" id="row2">
+                    <div class="key" id="A" onclick="inquire('A')">A</div>
+                    <div class="key" id="S" onclick="inquire('S')">S</div>
+                    <div class="key" id="D" onclick="inquire('D')">D</div>
+                    <div class="key" id="F" onclick="inquire('F')">F</div>
+                    <div class="key" id="G" onclick="inquire('G')">G</div>
+                    <div class="key" id="H" onclick="inquire('H')">H</div>
+                    <div class="key" id="J" onclick="inquire('J')">J</div>
+                    <div class="key" id="K" onclick="inquire('K')">K</div>
+                    <div class="key" id="L" onclick="inquire('L')">L</div>
+                </div>
+                <div class="keyRow" id="row3">
+                    <div class="key" id="Z" onclick="inquire('Z')">Z</div>
+                    <div class="key" id="X" onclick="inquire('X')">X</div>
+                    <div class="key" id="C" onclick="inquire('C')">C</div>
+                    <div class="key" id="V" onclick="inquire('V')">V</div>
+                    <div class="key" id="B" onclick="inquire('B')">B</div>
+                    <div class="key" id="N" onclick="inquire('N')">N</div>
+                    <div class="key" id="M" onclick="inquire('M')">M</div>
+                    <div class="tradeMark">KOMPACT 9000</div>
+                </div>
+            </div>
+            <div id="newGame">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#wordInput">New Game</button>
+            </div>
+        </div>
+        <!-- Modal: New game dialog -->
+        <div class="modal show" id="wordInput">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Enter Your Word</h4>
+                        <button type="button" class="close" data-dismiss="modal">×</button>
+                    </div>
+                    <div class="modal-body">
+                        <input id="inputField" type="text"><!-- Word input -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" onClick="newGame()" data-dismiss="modal">Start</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="source/logic.js"></script>
+    </body>
+</html>

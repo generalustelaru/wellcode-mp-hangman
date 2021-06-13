@@ -1,0 +1,82 @@
+.graphics {
+    height: 400;
+    width: 300;
+    margin: auto;
+}
+
+img {
+    position: relative;
+}
+
+#gallow {
+    height: 300;
+    top: 50;
+    right: -30;
+}
+
+#hanged {
+    height: 213;
+    top: 6;
+    right: 15;
+    opacity: 100%;
+    visibility: hidden;
+    /* animation */
+    animation-name: waddle;
+    animation-duration: 3s;
+    transform-origin: top;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;  
+}
+
+@keyframes waddle {
+    from {
+        transform: rotate(-5deg);
+    }
+    to {
+        transform: rotate(5deg);
+    }
+}
+
+/* Parts */
+.part {
+    opacity: 100%;
+    visibility: hidden;
+    
+}
+/* centered-arrangement-derived additional displacement; top: -78, right: -261*/
+#head {
+    height: 42;
+    top: -220; /* default displacement -157 */
+    right: -185; /* default displacement 76 */
+}
+#body {
+    height: 73;
+    top: -160; /* default displacement -82 */
+    right: -157; /* default displacement 104 */
+}
+
+#arm-left {    
+    height: 26;
+    top: -185; /* default displacement -129 */
+    right: -114; /* default displacement 147 */
+}
+
+#arm-right {
+    height: 26;
+    top: -185; /* default displacement -129 */
+    right: -115; /* default displacement 146 */
+}
+
+#leg-left {
+    height: 50;
+    top: -100; /* default displacement -33 */
+    right: -50; /* default displacement 211 */
+}
+
+#leg-right {
+    height: 50;
+    top: -100; /* default displacement -33 */
+    right: -48; /* default displacement 213 */
+}
+

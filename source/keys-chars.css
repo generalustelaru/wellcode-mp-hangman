@@ -1,0 +1,97 @@
+/* charField */
+
+#charField { /* \charBox\char, underline */
+    box-sizing: border-box;
+    height: 95px;
+    width: auto;
+    background: auto;
+    padding-top: 7px;
+
+    /* Content */
+    display: flex;
+    justify-content: center;
+}
+.charBox { /* \char, underline */
+    box-sizing: border-box;
+    height: auto;
+    width: 80px;
+    float: left;
+    margin-left: 10px;
+}
+.char {
+    visibility: hidden; /* VARIABLE */
+    box-sizing: border-box;
+    height: 65px;
+    width: 80px;
+    font-size: 60px;    
+    color: brown;
+    font-family: Lucida;
+    text-align: center;
+}
+.underline {
+    box-sizing: border-box;
+    height: 10px;
+    margin-top: 5px;
+    width: auto;
+    background: brown;
+}
+/* Keyboard */
+
+#keyboard {
+    visibility: hidden;
+}
+.keyRow { /* \key */
+    user-select: none;
+    box-sizing: border-box;
+    width: 425;
+    margin: auto;
+    height: 46px;
+    background: rgb(230,230,230);
+    box-shadow: 2px 2px 0px gray;
+}
+#keyboard {
+    visibility: hidden;
+}
+/* #row1 */
+#row2 {
+    padding-left:10px;
+}
+#row3 {
+    padding-left: 30px;
+}
+.key {
+    /* Appearance */
+    position: relative;
+    box-sizing: border-box;
+    background-color: lightgray;
+    color: black;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', 'sans-serif';
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    padding-top: 8px;
+    border-top: 1px solid rgb(200, 200, 200);
+    border-left: 1px solid rgb(200, 200, 200);
+    border-radius: 10px;
+    box-shadow: 3px 3px 0px gray;
+
+    /* Positioning */
+    float: left;
+    margin-left: 2px;
+    
+    /* Behavior */
+    transition-property: all;
+    transition-duration: .2s;
+    transition: ease-in;
+}
+.tradeMark {
+    box-sizing: border-box;
+    float: right;
+    height: 46px;
+    width: 65px;
+    padding-top: 30px;
+    font-size: 8px;
+    font-family: monospace;
+    color:rgb(82, 82, 82);
+}
