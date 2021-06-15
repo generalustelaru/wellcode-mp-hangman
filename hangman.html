@@ -13,7 +13,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     </head>
-    <body>
+    <body onload="assembleKeyboard()">
         <div id="result">
             <!-- messages-->
         </div>
@@ -32,39 +32,7 @@
                 <!-- charBox elements (character containers) go here -->
             </div>
             <div id="keyboard">
-                <div class="keyRow" id="row1">
-                    <div class="key" id="Q" onclick="inquire('Q')">Q</div>
-                    <div class="key" id="W" onclick="inquire('W')">W</div>
-                    <div class="key" id="E" onclick="inquire('E')">E</div>
-                    <div class="key" id="R" onclick="inquire('R')">R</div>
-                    <div class="key" id="T" onclick="inquire('T')">T</div>
-                    <div class="key" id="Y" onclick="inquire('Y')">Y</div>
-                    <div class="key" id="U" onclick="inquire('U')">U</div>
-                    <div class="key" id="I" onclick="inquire('I')">I</div>
-                    <div class="key" id="O" onclick="inquire('O')">O</div>
-                    <div class="key" id="P" onclick="inquire('P')">P</div>
-                </div>
-                <div class="keyRow" id="row2">
-                    <div class="key" id="A" onclick="inquire('A')">A</div>
-                    <div class="key" id="S" onclick="inquire('S')">S</div>
-                    <div class="key" id="D" onclick="inquire('D')">D</div>
-                    <div class="key" id="F" onclick="inquire('F')">F</div>
-                    <div class="key" id="G" onclick="inquire('G')">G</div>
-                    <div class="key" id="H" onclick="inquire('H')">H</div>
-                    <div class="key" id="J" onclick="inquire('J')">J</div>
-                    <div class="key" id="K" onclick="inquire('K')">K</div>
-                    <div class="key" id="L" onclick="inquire('L')">L</div>
-                </div>
-                <div class="keyRow" id="row3">
-                    <div class="key" id="Z" onclick="inquire('Z')">Z</div>
-                    <div class="key" id="X" onclick="inquire('X')">X</div>
-                    <div class="key" id="C" onclick="inquire('C')">C</div>
-                    <div class="key" id="V" onclick="inquire('V')">V</div>
-                    <div class="key" id="B" onclick="inquire('B')">B</div>
-                    <div class="key" id="N" onclick="inquire('N')">N</div>
-                    <div class="key" id="M" onclick="inquire('M')">M</div>
-                    <div class="tradeMark">KOMPACT 9000</div>
-                </div>
+                <!-- assembleKeyboard() -->
             </div>
             <div id="newGame">
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#wordInput">New Game</button>

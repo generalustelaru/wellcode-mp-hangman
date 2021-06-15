@@ -21,7 +21,7 @@ img {
     opacity: 100%;
     visibility: hidden;
     /* animation */
-    animation-name: waddle;
+    animation-name: sway;
     animation-duration: 3s;
     transform-origin: top;
     animation-iteration-count: infinite;
@@ -29,7 +29,7 @@ img {
     animation-timing-function: ease-in-out;  
 }
 
-@keyframes waddle {
+@keyframes sway {
     from {
         transform: rotate(-5deg);
     }

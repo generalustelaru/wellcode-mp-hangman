@@ -38,7 +38,7 @@
 /* Keyboard */
 
 #keyboard {
-    visibility: hidden;
+    visibility: visible;
 }
 .keyRow { /* \key */
     user-select: none;
@@ -50,7 +50,7 @@
     box-shadow: 2px 2px 0px gray;
 }
 #keyboard {
-    visibility: hidden;
+    visibility: visible;
 }
 /* #row1 */
 #row2 {
@@ -85,7 +85,7 @@
     transition-duration: .2s;
     transition: ease-in;
 }
-.tradeMark {
+#brand {
     box-sizing: border-box;
     float: right;
     height: 46px;

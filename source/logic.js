@@ -3,13 +3,64 @@ const alphabet = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "A", "S", "D
 const bodyParts = ["head", "body", "arm-left", "arm-right", "leg-left", "leg-right"];
 var word = "", goal, threat;
 
+function assembleKeyboard() {
+    const keyboard = document.getElementById("keyboard"); //<div class="keyRow" id="row1">
+    for (let r = 1; r <= 3; r++) {
+        const keyRow = document.createElement("div");
+        keyRow.className = "keyRow";
+        keyRow.id = "row" + r;
+        keyboard.appendChild(keyRow);
+        let from, to;
+        switch (r) {
+            case 1:
+                from = 0;
+                to = 9;
+                break;
+            case 2:
+                from = 10;
+                to = 18;
+                break;
+            case 3:
+                from = 19;
+                to = 25;
+                break;
+        }
+        for (let k = from; k <= to; k++) { //<div class="key" id="Q" onclick="inquire('Q')">Q</div>
+            const alpha = alphabet[k];
+            const key = document.createElement("div");
+            key.className = "key";
+            key.id = alpha;
+            key.innerHTML = alpha;
+            keyRow.appendChild(key);
+        }
+        if (r == 3) {
+            const brand = document.createElement("div");
+            brand.id = "brand";
+            brand.innerHTML = "KOMPACT 9000";
+            keyRow.appendChild(brand);
+        }
+    }
+    alphabet.forEach(key => { // Keys shouldn't be operational before the game starts
+        keyPress(key);
+    });
+}
+
+function keyPress(key) {
+    let keyPress = document.getElementById(key);
+    keyPress.style.color = "white";
+    keyPress.style.top = "2";
+    keyPress.style.left = "2";
+    keyPress.style.boxShadow = "1px 1px 0px";
+    keyPress.setAttribute("onclick", "disabled()");
+}
+
 function newGame() {
     clearBoard(); // Reset elements for a new game
     word = document.getElementById("inputField").value; // This is used to find and switch characters on the screen
     goal = word.length; // When goal reaches 0 the game ends in a 'win'
     document.getElementById("inputField").value = ""; // Clear the modal text field
     document.getElementById("keyboard").style.visibility = "visible";
-    console.log("Input: " + word);
+    //console.log("Input: " + word);
     let checkAlpha = new RegExp(/^[a-zA-Z]+$/); // Parse the word to make sure it only contains alphabetic characters
     if (word.match(checkAlpha)) {
         word = word.toUpperCase();
@@ -32,7 +83,7 @@ function newGame() {
             charBox.appendChild(underline);
             charField.appendChild(charBox);
         }
-        console.log("Word: " + word + "\nThreat: " + threat + "/7 ; Goal: " + goal + "/" + word.length);
+        //console.log("Word: " + word + "\nThreat: " + threat + "/7 ; Goal: " + goal + "/" + word.length);
     } else {
         console.log("Found illegal character");
         disableKeys("misfire"); // Halt game start
@@ -87,16 +138,7 @@ function inquire(key) { // Called when clicking a key
         }
     }
     keyPress(key); // Whatever happens, a pressed key, remains this way
-    console.log("Threat: " + threat + "/7 ; Goal: " + goal + "/" + word.length);
-}
-
-function keyPress(key) {
-    let keyPress = document.getElementById(key);
-    keyPress.style.color = "white";
-    keyPress.style.top = "2";
-    keyPress.style.left = "2";
-    keyPress.style.boxShadow = "1px 1px 0px";
-    keyPress.setAttribute("onclick", "bump()");
+    //console.log("Threat: " + threat + "/7 ; Goal: " + goal + "/" + word.length);
 }
 
 function disableKeys(result) { // When the game ends, all keys are disabled
@@ -109,7 +151,7 @@ function disableKeys(result) { // When the game ends, all keys are disabled
             resultText.innerHTML = "You live to see another day."
             break;
         case "lose":
-            resultText.innerHTML = "You became a strange fruit."
+            resultText.innerHTML = "You'    ve become a strange fruit."
             break;
         case "misfire":
             resultText.innerHTML = "You better think of something better."
@@ -120,6 +162,6 @@ function disableKeys(result) { // When the game ends, all keys are disabled
     }
 }
 
-function bump() {
+function disabled() {
     console.log("disabled");
 }
